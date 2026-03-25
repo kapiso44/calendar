@@ -1,0 +1,50 @@
+[
+  {
+    "season": "2025",
+    "status": "finished",
+    "dateVenue": "2025-08-18",
+    "timeVenueUTC": "19:00:00",
+    "stadium": "Sample Stadium",
+    "description": "Sample imported match",
+    "originCompetitionId": 101,
+    "originCompetitionName": "Premier Sample League",
+    "stage": {
+      "id": 1,
+      "name": "Round 1",
+      "ordering": 1
+    },
+    "homeTeam": {
+      "id": 2001,
+      "name": "Home FC",
+      "shortName": "HFC",
+      "slug": "home-fc"
+    },
+    "awayTeam": {
+      "id": 2002,
+      "name": "Away FC",
+      "shortName": "AFC",
+      "slug": "away-fc"
+    },
+    "result": {
+      "home": 2,
+      "away": 1,
+      "winner": "home"
+    }
+  },
+  {
+    "season": "2025",
+    "status": "scheduled",
+    "dateVenue": "2025-08-25",
+    "timeVenueUTC": "20:30:00",
+    "stadium": null,
+    "description": "Sample fixture without some nested data",
+    "originCompetitionId": null,
+    "originCompetitionName": null,
+    "stage": null,
+    "homeTeam": null,
+    "awayTeam": {
+      "name": "Fallback Name Team"
+    },
+    "result": null
+  }
+]
