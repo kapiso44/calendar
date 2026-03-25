@@ -1,0 +1,105 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.45;
+  color: #1f2937;
+  background: #f6f7f9;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header {
+  background: #111827;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.navbar a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.65rem 0.4rem;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+th {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #4b5563;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.event-detail dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  margin: 0;
+}
+
+.event-detail dt {
+  font-weight: 700;
+}
+
+.event-detail dd {
+  margin: 0.2rem 0 0;
+}
+
+.muted {
+  color: #6b7280;
+}

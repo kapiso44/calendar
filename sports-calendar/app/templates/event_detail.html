@@ -1,5 +1,66 @@
 {% extends "base.html" %}
+
+{% block title %}Event #{{ event.id }}{% endblock %}
+
 {% block content %}
-<h1>Event Detail</h1>
-<p>Template placeholder for event detail.</p>
+  <h1>Event Detail</h1>
+
+  <article class="card event-detail">
+    <dl>
+      <div>
+        <dt>Date</dt>
+        <dd>{{ event.event_date or 'TBD' }}</dd>
+      </div>
+      <div>
+        <dt>Time (UTC)</dt>
+        <dd>{{ event.event_time_utc or 'TBD' }}</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd>{{ event.status }}</dd>
+      </div>
+      <div>
+        <dt>Sport</dt>
+        <dd>{{ event.sport.name if event.sport else 'TBD' }}</dd>
+      </div>
+      <div>
+        <dt>Competition</dt>
+        <dd>{{ event.competition.name if event.competition else 'TBD' }}</dd>
+      </div>
+      <div>
+        <dt>Stage</dt>
+        <dd>{{ event.stage.name if event.stage else 'Unknown stage' }}</dd>
+      </div>
+      <div>
+        <dt>Home Team</dt>
+        <dd>{{ event.home_team.name if event.home_team else 'TBD' }}</dd>
+      </div>
+      <div>
+        <dt>Away Team</dt>
+        <dd>{{ event.away_team.name if event.away_team else 'TBD' }}</dd>
+      </div>
+      <div>
+        <dt>Venue</dt>
+        <dd>{{ event.venue.name if event.venue else 'No venue' }}</dd>
+      </div>
+      <div>
+        <dt>Result</dt>
+        <dd>
+          {% if event.result and (event.result.home_score is not none or event.result.away_score is not none) %}
+            {{ event.result.home_score if event.result.home_score is not none else '-' }}
+            -
+            {{ event.result.away_score if event.result.away_score is not none else '-' }}
+          {% else %}
+            No result
+          {% endif %}
+        </dd>
+      </div>
+      <div>
+        <dt>Description</dt>
+        <dd>{{ event.description or 'No description' }}</dd>
+      </div>
+    </dl>
+  </article>
+
+  <p><a href="{{ url_for('events_page') }}">← Back to events</a></p>
 {% endblock %}

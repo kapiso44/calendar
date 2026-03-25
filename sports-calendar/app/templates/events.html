@@ -1,5 +1,42 @@
 {% extends "base.html" %}
+
+{% block title %}Events{% endblock %}
+
 {% block content %}
-<h1>Events</h1>
-<p>Template placeholder for event list.</p>
+  <h1>Sports Events</h1>
+
+  {% if events %}
+    <div class="card table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time (UTC)</th>
+            <th>Sport</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+            <tr>
+              <td>
+                <a href="{{ url_for('event_detail_page', event_id=event.id) }}">
+                  {{ event.event_date or 'TBD' }}
+                </a>
+              </td>
+              <td>{{ event.event_time_utc or 'TBD' }}</td>
+              <td>{{ event.sport.name if event.sport else 'TBD' }}</td>
+              <td>{{ event.home_team.name if event.home_team else 'TBD' }}</td>
+              <td>{{ event.away_team.name if event.away_team else 'TBD' }}</td>
+              <td><span class="status">{{ event.status }}</span></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="card muted">No events available.</p>
+  {% endif %}
 {% endblock %}

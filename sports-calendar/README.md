@@ -88,3 +88,13 @@ curl "http://127.0.0.1:8000/events/1"
 
 ## Database file
 - Default SQLite file: `sports_calendar.db` (project root)
+
+## Frontend pages
+
+The app also includes server-rendered HTML pages using FastAPI + Jinja2 templates.
+
+- `GET /` - Event list page
+- `GET /pages/events` - Event list page (alias)
+- `GET /pages/events/{id}` - Event detail page
+
+Static assets are served from `/static`.
